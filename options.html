@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <title>Casoriffic Otions</title>
+    <script src="ext-core.js"></script>
+    <script src="login_helper.js"></script>
+    <script src="options.js"></script>
+    <link href="bootstrap-combined.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="row">
+      <div class="span1">
+      <div class="span11">
+    <form id="options-form" class="form-horizontal">
+      <fieldset>
+        <legend>Cassorific</legend>
+        <p>Auto login into the University web based applications.</p>
+        <div class="control-group">
+          <label class="control-label" for="username">Username</label>
+          <div class="controls">
+            <input type="text" id="username" placeholder="a1234567">
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="password">Password</label>
+          <div class="controls">
+            <input type="password" id="password" placeholder="Password">
+          </div>
+        </div>
+        <div class="control-group">
+          <div class="controls">
+            <label class="checkbox">
+              <input type="checkbox" id="dosubmit" value="yes"> Auto submit login form (only used if both User Name and Password set)
+            </label>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-primary" id="save">Save</button>
+        <div id="status"></div>
+      </fieldset>
+      </form>
+    </form>
+    </div>
+    </div>
+  </div>
+  </body>
+</html>

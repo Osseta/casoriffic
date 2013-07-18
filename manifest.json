@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+  "name": "Casoriffic",
+  "version": "2.1",
+  "description": "Quick UofA Web Apps Authentication.",
+  "options_page": "options.html",
+  "background": {"scripts": ["background.js"]},
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "permissions": [
+    "https://auth.adelaide.edu.au/",
+    "https://auth2.adelaide.edu.au/",
+    "https://owa.adelaide.edu.au/",
+    "https://jira.adelaide.edu.au/"
+  ],
+   "content_scripts": [ {
+      "js": [ "ext-core.js", "login_helper.js", "cas_login.js" ],
+      "matches": [ "https://auth.adelaide.edu.au/login*", "https://auth2.adelaide.edu.au/login*"]
+   },{
+      "js": [ "ext-core.js", "login_helper.js", "calendar_login.js" ],
+      "matches": ["https://owa.adelaide.edu.au/CookieAuth.dll*"]
+   } ,{
+      "js": [ "ext-core.js", "login_helper.js", "jira_login.js" ],
+      "matches": ["https://jira.adelaide.edu.au/plugins/servlet/gadgets/ifr*", "https://jira.adelaide.edu.au/login.jsp*"],
+      "all_frames": true
+   }]
+}
